@@ -30,16 +30,25 @@ let itemsAdded = [];
 
 let createCart = document.getElementById("add-items");
 const showMenu = document.getElementById("select-menu");
+
 const showFlavors = flavorsMenu.map(
   (flavor) =>
     `
     <div class="order-options">
     <ul>
     <li class="name">${flavor.name}</li>
-    <li class="description">${flavor.description}</li>
-    <li class="flavors">${flavor.flavors}</li>
+    <li class="description">${flavor.description}</li> 
     <li class="price">${flavor.price}</li>
-   
+    <div class="select-flavor">
+    <div>choose flavor:</div>
+    <input type ="radio" class="flavors">
+    ${flavor.flavors[0]} 
+    <input type ="radio" class="flavors">
+    ${flavor.flavors[1]} 
+    <input type ="radio" class="flavors">
+    ${flavor.flavors[2]}</input>
+    <br>
+   </div>
 <button class="add-btn" id="add-btn" data-add="${flavor.id}">+</button>
   </ul>
    <hr >
@@ -60,25 +69,32 @@ function createOrder(flavorId) {
     return item.id == flavorId;
   })[0];
 
-  if (itemsAdded) {
-    itemsAdded.push(addItem);
+  itemsAdded.push(addItem);
 
-    itemsAdded.forEach(function (addItem) {
-      createCart.innerHTML += `
-          <div class="cart-items" id="add-to-cart">
-            ${addItem.emoji} ${addItem.name} $${addItem.price}
-          </div>
-       `;
-      console.log(addItem.name);
-    });
-  }
+  //  total += addItem.price
 
-  showCartItems = `
-  <div>Your Order</div>
-  <div class="cart-items" id="add-to-cart"> ${addItem.emoji} ${addItem.name} $${addItem.price}
-  </div>
-  <button class="purchase-btn">Complete Order</button>`;
+  showOrder();
+}
 
-  // console.log(itemsAdded);
-  createCart.innerHTML = showCartItems;
+function showOrder() {
+  checkout = "";
+  itemsAdded.forEach(function (order) {
+    checkout += `<div>${order.emoji} ${order.name} $${order.price}</div>`;
+  });
+
+  orderHTML(checkout);
+
+  console.log(checkout);
+}
+
+function orderHTML(checkout) {
+  let itemsHTML = ``;
+
+  itemsHTML = `<div class="cart-items" id="add-to-cart">
+                 <div class="title">your order</div>
+                 ${checkout} 
+                 </div>
+                 <button class ="purchase-btn">Complete Order</button>`;
+
+  document.getElementById("add-items").innerHTML = itemsHTML;
 }

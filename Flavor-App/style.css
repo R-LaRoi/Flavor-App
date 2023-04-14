@@ -34,7 +34,8 @@ align-items: center;
   color: orange;
 }
 .description,
-.flavors{
+.flavors,
+.select-flavor{
 font-size: 14px;
 color: dimgray;
 
@@ -107,6 +108,9 @@ hr{
 
   width: 100%;
 }
+
+
+
 /* checkout section */
 
 /* 
