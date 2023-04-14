@@ -19,26 +19,16 @@ margin: 0;
 }
 .flavor-header
 {margin-bottom: 25px;
-  display: grid;
-    grid-template-columns: 1fr 1fr;
   border-bottom: 2px solid rgba(254, 127, 0, 0.953);
-top: 30px;
+
 width: 500px;
 height: 180px;
-left: 0px;}
-
-
-
-.header-text{
-  font-family: 'Rammetto One', cursive;
-    font-size: 60px;
-    color: rgba(254, 127, 0, 0.953);
-
+align-items: center;
 }
 
 
 
-.name{
+.name ,.title{
   font-family: 'Roboto', sans-serif;
   font-size: 20px;
   color: orange;
@@ -48,21 +38,75 @@ left: 0px;}
 font-size: 14px;
 color: dimgray;
 
-
 }
 .price{ font-size: 12px;
     color: orange;
 }
 
-ul{
-  list-style: none;
-  border-bottom: 1px solid gray;
-  width: 400px;
-  margin: 0 auto;
-  padding: 0;
+
+.add-btn{
+width: 25px;
+height: 25px;
+background-color: white;
+border-radius: 50%;
+border: .5px solid orange;
+margin-top: 15px;
+}
+.add-btn:hover{
+
+  background-color: orange;
+}
+
+.order-items{
+text-align: center;
+  line-height: 40px;
+    padding: 15px;
+      margin: 0 auto;
+     padding-bottom: 20px;
+  
+}
+
+.purchase-btn{
+  display: block;
+color: rgb(37, 36, 36);
+background-color: orange;
+width: 100%;
+padding: 12px;
+border-radius: 10px;
+border: .1px solid orange;
+
+}
+
+.purchase-btn:hover {
+  color: rgb(37, 36, 36);
+  background-color: rgba(255, 166, 0, 0.697);
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: .1px solid orange;
+
+}
+
+.image-logo{
+position: relative;
+margin-left: 180px;
+}
+
+span{
+  padding-right: 20px;
 }
 
 
+ul{
+line-height: 20px;
+  list-style: none;
+  text-align: center;
+}
+
+hr{
+
+  width: 100%;
+}
 /* checkout section */
 
 /* 
@@ -99,14 +143,6 @@ top: 234px; */
 
 
 
-/* add-btn */
-
-/* 
-position: absolute;
-width: 50px;
-height: 50px;
-left: 504px;
-top: 427px; */
 
 
 
