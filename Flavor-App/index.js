@@ -27,9 +27,12 @@ const flavorsMenu = [
 ];
 
 let itemsAdded = [];
-
+let orderTotal = 0;
 let createCart = document.getElementById("add-items");
 const showMenu = document.getElementById("select-menu");
+const paymentBox = document.getElementById("payment-box");
+
+//  RENDERS MENU OPTION
 
 const showFlavors = flavorsMenu.map(
   (flavor) =>
@@ -58,9 +61,12 @@ const showFlavors = flavorsMenu.map(
 
 showMenu.innerHTML = showFlavors;
 
+// Selects items from Menu
+
 document.addEventListener("click", function (event) {
   if (event.target.dataset.add) {
     createOrder(event.target.dataset.add);
+    console.log(createOrder);
   }
 });
 
@@ -71,15 +77,18 @@ function createOrder(flavorId) {
 
   itemsAdded.push(addItem);
 
-  //  total += addItem.price
+  showOrderHtml();
+  orderTotal += addItem.price;
 
-  showOrder();
+  console.log(orderTotal);
 }
+//  renders order section
 
-function showOrder() {
+function showOrderHtml() {
   checkout = "";
   itemsAdded.forEach(function (order) {
-    checkout += `<div>${order.emoji} ${order.name} $${order.price}</div>`;
+    checkout += `<div>${order.emoji} ${order.name} $${order.price}</div>
+   `;
   });
 
   orderHTML(checkout);
@@ -94,7 +103,31 @@ function orderHTML(checkout) {
                  <div class="title">your order</div>
                  ${checkout} 
                  </div>
-                 <button class ="purchase-btn">Complete Order</button>`;
+                 <div>${orderTotal}</div>
+                 <button class ="order-btn" id='order-btn'>Complete Order</button>`;
 
   document.getElementById("add-items").innerHTML = itemsHTML;
+  document
+    .getElementById("order-btn")
+    .addEventListener("click", paymentModalHtml);
+}
+
+//  Checkout Payment Modal
+
+function paymentModalHtml() {
+  paymentBox.innerHTML = `
+  
+          <div>Enter Card Details</div>
+          <form>
+            <input type="text" placeholder="name">
+            <input type="text" placeholder="card-details">
+            <input type="text" placeholder="Enter CVV">
+          </form>
+            <button id='pay-btn'>pay</button>
+          
+      `;
+
+  document.getElementById("pay-btn").addEventListener("click", () => {
+    paymentBox.innerHTML = `<div>thank you</div>`;
+  });
 }

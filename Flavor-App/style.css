@@ -67,7 +67,7 @@ text-align: center;
   
 }
 
-.purchase-btn{
+.order-btn{
   display: block;
 color: rgb(37, 36, 36);
 background-color: orange;
@@ -78,7 +78,7 @@ border: .1px solid orange;
 
 }
 
-.purchase-btn:hover {
+.order-btn:hover {
   color: rgb(37, 36, 36);
   background-color: rgba(255, 166, 0, 0.697);
   width: 100%;
@@ -111,39 +111,22 @@ hr{
 
 
 
-/* checkout section */
 
-/* 
-position: absolute;
-width: 508px;
-height: 319px;
-left: 46px;
-top: 789px; */
-
-
-
-
-/* payment-modal */
-
-
-/* position: absolute;
-width: 524px;
-height: 542.24px;
-left: 38px;
-top: 292px;
-
-filter: drop-shadow(5.18654px 5.18654px 255.437px rgba(0, 0, 0, 0.5)); */
+form{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 20px;
+height: 300px;
+  width: 250px;
+box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+border-radius: 10px;
+background-color: rgb(230, 230, 230);
+color: white;
 
 
 
-/* item-1 */
-/* 
-
-position: absolute;
-width: 508px;
-height: 140px;
-left: 46px;
-top: 234px; */
+}
 
 
 
