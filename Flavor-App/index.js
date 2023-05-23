@@ -43,7 +43,7 @@ const showFlavors = flavorsMenu.map(
     <li class="description">${flavor.description}</li> 
     <li class="price">${flavor.price}</li>
     <div class="select-flavor">
-    <div>choose flavor:</div>
+    <div>Flavor:</div>
     <input type ="radio" class="flavors">
     ${flavor.flavors[0]} 
     <input type ="radio" class="flavors">
@@ -54,7 +54,7 @@ const showFlavors = flavorsMenu.map(
    </div>
 <button class="add-btn" id="add-btn" data-add="${flavor.id}">+</button>
   </ul>
-   <hr >
+ 
   </div
   `
 );
@@ -128,6 +128,6 @@ function paymentModalHtml() {
       `;
 
   document.getElementById("pay-btn").addEventListener("click", () => {
-    paymentBox.innerHTML = `<div>thank you</div>`;
+    paymentBox.innerHTML = `<div class='message'>Thank you for your order!</div>`;
   });
 }
